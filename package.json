@@ -1,0 +1,27 @@
+{
+  "name": "@js-bits/performance",
+  "version": "0.0.1",
+  "description": "Cross-environment (nodejs/web) performance object",
+  "keywords": [
+    "javascript",
+    "performance",
+    "web",
+    "node",
+    "browser"
+  ],
+  "type": "module",
+  "module": "./index.js",
+  "exports": "./index.js",
+  "browser": {
+    "perf_hooks": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/js-bits/performance"
+  },
+  "author": "https://github.com/apolo-gh",
+  "license": "ISC",
+  "engines": {
+    "node": ">=12"
+  }
+}
