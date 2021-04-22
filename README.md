@@ -1,5 +1,7 @@
 # Cross-environment (nodejs/web) performance object
 
+This package exports `window.performance` in a browser and `perf_hooks` in a Node.js environment. Which is helpful when you are developing a package compatible with both environments. Allows to avoid conditional imports.
+
 ## Installation
 
 Install with npm:
