@@ -1,6 +1,6 @@
 # Cross-environment (nodejs/web) performance object
 
-This package exports `window.performance` object in a browser and `perf_hooks` module in a Node.js environment. Which is helpful when you develop a package compatible with both environments and use `performance` for some measurements. Allows to avoid conditional imports.
+This package exports `window.performance` object in a browser and built-in [Performance measurement APIs](https://nodejs.org/api/perf_hooks.html) module in a Node.js environment. Which is helpful when you develop a package compatible with both environments and use `performance` for some measurements. Allows to avoid conditional imports.
 
 ## Installation
 
@@ -30,6 +30,5 @@ const t = performance.now();
 
 ## Notes
 
-- [Window.performance](https://developer.mozilla.org/en-US/docs/Web/API/Window/performance)
-
-- [Performance measurement APIs](https://nodejs.org/api/perf_hooks.html)
+* Minimal size (bytes) in a browser since [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance_API) is natively supported. Does not include any polyfills.
+* Requires [ECMAScript modules](https://nodejs.org/api/esm.html) to be enabled in Node.js environment. Otherwise, compile into a CommonJS module.
