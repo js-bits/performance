@@ -1,6 +1,6 @@
 {
   "name": "@js-bits/performance",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Cross-environment (nodejs/web) performance object",
   "keywords": [
     "javascript",
