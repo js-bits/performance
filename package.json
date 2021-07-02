@@ -26,5 +26,15 @@
   "license": "ISC",
   "engines": {
     "node": ">=12"
+  },
+  "prettier": "@js-bits/formalinter/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "@js-bits/eslint-config/.eslintrc.json"
+  },
+  "scripts": {
+    "lint": "eslint '**/*.{js,jsx}'"
+  },
+  "devDependencies": {
+    "@js-bits/formalinter": "^0.1.2"
   }
 }
