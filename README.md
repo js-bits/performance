@@ -22,6 +22,12 @@ Import where you need it:
 import performance from '@js-bits/performance';
 ```
 
+or require for CommonJS:
+
+```javascript
+const performance = require('@js-bits/performance');
+```
+
 ## How to use
 
 ```javascript
@@ -30,5 +36,4 @@ const t = performance.now();
 
 ## Notes
 
-* Minimal size (bytes) in a browser since [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance_API) is natively supported. Does not include any polyfills.
-* Requires [ECMAScript modules](https://nodejs.org/api/esm.html) to be enabled in Node.js environment. Otherwise, compile into a CommonJS module.
+- Minimal size (bytes) in a browser since [Performance API](https://developer.mozilla.org/en-US/docs/Web/API/Performance_API) is natively supported. Does not include any polyfills.
