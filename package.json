@@ -40,8 +40,9 @@
     "extends": "@js-bits/eslint-config/.eslintrc.json"
   },
   "scripts": {
-    "build": "rimraf ./dist && yarn build:dts && rollup ./index.js --format cjs --file dist/index.cjs --exports default",
-    "build:dts": "tsc ./index.js --allowJs --emitDeclarationOnly --declaration --outDir dist",
+    "build": "rimraf ./dist && yarn build:dts && rollup ./index.js --format cjs --file dist/index.cjs --exports default --no-strict --generatedCode.constBindings",
+    "build:dts": "tsc ./index.js --allowJs --emitDeclarationOnly --declaration --outDir dist && yarn prepare:dts",
+    "prepare:dts": "node ./node_modules/@js-bits/typedef-utils/scripts/prepare-dts.js ./dist/index.d.ts",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
     "test-cjs": "jest --verbose",
     "test-coverage": "yarn test --coverage",
@@ -49,8 +50,12 @@
     "lint": "tsc --noEmit && eslint '**/*.{js,jsx}'",
     "prepare": "husky install"
   },
+  "dependencies": {
+    "@types/node": "^20.2.5"
+  },
   "devDependencies": {
     "@js-bits/formalinter": "^1.0.3",
+    "@js-bits/typedef-utils": "^1.0.7",
     "@types/jest": "29.4.3",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
@@ -69,8 +74,5 @@
         "testEnvironment": "jsdom"
       }
     ]
-  },
-  "dependencies": {
-    "@types/node": "^20.2.5"
   }
 }
